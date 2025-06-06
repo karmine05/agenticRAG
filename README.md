@@ -43,8 +43,8 @@ conda activate oracle-cti
 2. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/oracle-cti.git
-cd oracle-cti
+git clone https://github.com/karmine05/agenticRAG.git
+cd agenticRAG
 ```
 
 3. **Install required packages:**
