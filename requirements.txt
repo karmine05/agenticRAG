@@ -1,0 +1,28 @@
+# Core dependencies
+streamlit==1.41.1
+langchain==0.3.17
+langchain_huggingface==0.1.2
+langchain_chroma==0.2.1
+langchain_community==0.3.16
+sentence-transformers==3.4.1
+PyPDF2==3.0.1
+beautifulsoup4==4.12.3
+requests==2.32.3
+tqdm==4.67.1
+python-dotenv==1.0.1
+smolagents==1.6.0
+duckduckgo_search==7.3.0
+google-search-results==2.4.2
+torch==2.6.0
+pymupdf==1.25.5
+watchdog
+psutil==5.9.8
+
+# Testing dependencies
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Production dependencies
+gunicorn>=21.2.0
+uvicorn>=0.27.0
+fastapi>=0.109.0

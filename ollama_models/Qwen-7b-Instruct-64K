@@ -1,0 +1,7 @@
+FROM qwen2.5:7b
+PARAMETER num_ctx 64000
+PARAMETER temperature 0.1
+PARAMETER num_gpu 100
+PARAMETER num_thread 8
+PARAMETER mirostat 0
+# PARAMETER repeat_penalty 1.1

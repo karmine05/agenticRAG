@@ -1,0 +1,213 @@
+/* Custom CSS for Oracle CTI Agent - Minimalistic Design */
+
+/* Base styling */
+body, .stApp, .main {
+    background-color: #FFFFFF !important;
+    color: #333333 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 600 !important;
+    color: #333333 !important;
+    letter-spacing: -0.02em;
+}
+
+p, div, span, li {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    color: #333333 !important;
+    line-height: 1.6;
+}
+
+/* Sidebar styling - cleaner and more subtle */
+.sidebar .sidebar-content, [data-testid="stSidebar"] {
+    background-color: #F8F9FA !important;
+    border-right: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem 1rem;
+}
+
+/* Sidebar headers */
+.sidebar h1, .sidebar h2, .sidebar h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #333333 !important;
+}
+
+/* Chat container - more breathing room */
+.main .block-container {
+    padding: 2rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Chat message styling - more modern and clean */
+.stChatMessage, [data-testid="stChatMessage"] {
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: none !important;
+}
+
+/* User message styling */
+.stChatMessage[data-testid="user-message"] {
+    background-color: #F0F7FF !important;
+    border-left: none !important;
+}
+
+/* Assistant message styling */
+.stChatMessage[data-testid="assistant-message"] {
+    background-color: #F8F9FA !important;
+    border-left: none !important;
+}
+
+/* Button styling - more minimal */
+.stButton > button {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    background-color: #FF4B4B !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    box-shadow: none !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Toggle switch styling - more modern */
+.stToggle > div {
+    transition: all 0.2s ease;
+}
+
+/* Input field styling - cleaner */
+.stTextInput > div > div > input {
+    border-radius: 8px;
+    border: 1px solid #E0E0E0 !important;
+    padding: 0.75rem 1rem;
+    color: #333333 !important;
+    background-color: #FFFFFF !important;
+    box-shadow: none !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #FF4B4B !important;
+    box-shadow: 0 0 0 1px rgba(255, 75, 75, 0.2) !important;
+}
+
+/* Select box styling - cleaner */
+.stSelectbox > div {
+    border-radius: 8px;
+}
+
+.stSelectbox > div > div > select {
+    color: #333333 !important;
+    background-color: #FFFFFF !important;
+}
+
+/* Slider styling */
+.stSlider > div > div {
+    color: #333333 !important;
+}
+
+.stSlider > div > div > div > div {
+    background-color: #FF4B4B !important;
+}
+
+/* Expander styling */
+.stExpander {
+    border-radius: 8px;
+    border: 1px solid #E0E0E0 !important;
+    overflow: hidden;
+}
+
+.stExpander > details > summary {
+    padding: 0.75rem 1rem;
+    background-color: #F8F9FA !important;
+    color: #333333 !important;
+}
+
+/* Code block styling */
+code {
+    border-radius: 6px;
+    padding: 0.2rem 0.4rem;
+    background-color: #F0F2F6 !important;
+    color: #333333 !important;
+    font-family: 'Roboto Mono', monospace !important;
+    font-size: 0.9em;
+}
+
+pre {
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #F0F2F6 !important;
+    border: none;
+    color: #333333 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Chat input - make it stand out */
+[data-testid="stChatInput"] {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    padding: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Force light theme for all elements */
+.st-emotion-cache-1kyxreq, .st-emotion-cache-16txtl3, .st-emotion-cache-1wrcr25,
+.st-emotion-cache-ue6h4q, .st-emotion-cache-10trblm, .st-emotion-cache-16idsys,
+.st-emotion-cache-1gulkj5, .st-emotion-cache-18ni7ap, .st-emotion-cache-1erivf3,
+.st-emotion-cache-1d3w5wq, .st-emotion-cache-1inwz65, .st-emotion-cache-1oe5cao {
+    background-color: #FFFFFF !important;
+    color: #333333 !important;
+}
+
+/* Remove unnecessary borders and shadows */
+div:not(.stChatMessage) {
+    border: none !important;
+}
+
+/* Add spacing between sidebar sections */
+.sidebar .block-container > div > div > div {
+    margin-bottom: 2rem;
+}
+
+/* Make file uploader cleaner */
+.stFileUploader > div {
+    border-radius: 8px;
+    border: 1px dashed #E0E0E0 !important;
+    padding: 1rem;
+}
+
+.stFileUploader > div:hover {
+    border-color: #FF4B4B !important;
+}
+
+/* Success/info/warning/error messages */
+.stAlert {
+    border-radius: 8px;
+    border: none !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Contributor section styling */
+.contributor-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E0E0E0;
+    font-size: 0.9rem;
+}
+
+.contributor-section h4 {
+    margin-bottom: 0.5rem;
+}

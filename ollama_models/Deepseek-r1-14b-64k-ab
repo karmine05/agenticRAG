@@ -1,0 +1,7 @@
+FROM huihui_ai/deepseek-r1-abliterated:14b-qwen-distill-q4_K_M
+PARAMETER num_ctx 64000
+PARAMETER temperature 0.7
+PARAMETER num_gpu 100
+PARAMETER num_thread 8
+PARAMETER mirostat 0
+#PARAMETER repeat_penalty 1.1
