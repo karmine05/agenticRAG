@@ -1,34 +1,25 @@
 # 🔮 Oracle: CTI Agentic RAG
 
-<div align="center">
-  <img src="./screenshots/oracle_logo.png" alt="Oracle Logo" width="200"/>
-  <p><em>Advanced Cyber Threat Intelligence Analysis with Agentic RAG</em></p>
-</div>
-
 ## 📋 Overview
 
 Oracle is a sophisticated Retrieval-Augmented Generation (RAG) system with agent capabilities specifically designed for Cyber Threat Intelligence (CTI) analysis. It combines the power of large language models with specialized knowledge retrieval to provide accurate, contextual, and actionable intelligence for security professionals.
 
 ### Key Features
 
-- **🧠 Agentic RAG Architecture**: Uses a reasoning model for analysis followed by a specialized tool model for final responses
+- **🧠 Agentic RAG Architecture**: Uses a reasoning model for analysis, followed by a specialized tool model for final responses
 - **🌐 Web-Enhanced Intelligence**: Augments local knowledge with real-time web search results
 - **📊 Multi-Database Prioritization**: Intelligently balances between permanent and temporary knowledge bases
-- **🔍 Specialized CTI Analysis**: Optimized for cyber security domain with IOC extraction capabilities
+- **🔍 Specialized CTI Analysis**: Optimized for cyber cybersecurity domain with IOC extraction capabilities
 - **📝 Document Processing**: Handles PDFs, text files, JSON, and website content
 - **💻 Intuitive Web Interface**: Clean, minimalistic UI built with Streamlit
 
-<div align="center">
-  <img src="./screenshots/oracle_overview.png" alt="Oracle Overview" width="800"/>
-  <p><em>Oracle's key components and workflow</em></p>
-</div>
 
 ## 🏗️ Architecture
 
 Oracle uses a sophisticated architecture that combines multiple components to deliver powerful CTI analysis capabilities:
 
 <div align="center">
-  <img src="./screenshots/architecture_diagram.png" alt="Architecture Diagram" width="800"/>
+  <img src="./agenticRAG_architecture.svg" alt="Architecture Diagram" width="800"/>
   <p><em>Oracle's component architecture</em></p>
 </div>
 
@@ -63,11 +54,6 @@ python -m pip install -r requirements.txt
 pip install 'smolagents[openai]'
 ```
 
-<div align="center">
-  <img src="./screenshots/installation.png" alt="Installation Process" width="700"/>
-  <p><em>Terminal view of the installation process</em></p>
-</div>
-
 ### Ollama Setup (for Local Inference)
 
 1. **Install Ollama** from [ollama.ai](https://ollama.ai)
@@ -92,11 +78,6 @@ ollama create qwen2.5:7b-64k -f ollama_models/Qwen-7b-Instruct-64K
 # Create Llama model with 64k context - recommended for general RAG
 ollama create llama3:8b-64k -f ollama_models/Llama-3-8b-64k
 ```
-
-<div align="center">
-  <img src="./screenshots/ollama_setup.png" alt="Ollama Setup" width="700"/>
-  <p><em>Setting up Ollama with custom models</em></p>
-</div>
 
 > **Note**: You can also use the provided `rebuild_models.sh` script to create all required models:
 > ```bash
@@ -134,14 +115,9 @@ SERPAPI_KEY=your_serpapi_key_here
 
 # Temporary Database Configuration
 # Higher values prioritize temporary database results more
-# Default is 2.0, which means temporary database results are weighted twice as much
+# Default is 2.0, which means permanent database results are weighted twice as much
 TEMP_DB_BOOST=2.0
 ```
-
-<div align="center">
-  <img src="./screenshots/env_config.png" alt="Environment Configuration" width="700"/>
-  <p><em>Example .env configuration file</em></p>
-</div>
 
 ### Cloud API with HuggingFace (Alternative)
 
@@ -167,10 +143,6 @@ This script will:
 2. Create or update the vector database in the `chroma_db` directory
 3. Prompt for website URLs to process (optional)
 
-<div align="center">
-  <img src="./screenshots/ingest_process.png" alt="Ingest Process" width="700"/>
-  <p><em>Running the ingest.py script to create vector databases</em></p>
-</div>
 
 #### Data Directory Structure
 
@@ -204,7 +176,7 @@ python -m streamlit run web_ui.py
 ```
 
 <div align="center">
-  <img src="./screenshots/oracle_ui.png" alt="Oracle Web UI" width="800"/>
+  <img src="./ScreenShots/General info - Threat Group.png" alt="Oracle Web UI" width="800"/>
   <p><em>Oracle's intuitive web interface</em></p>
 </div>
 
@@ -216,30 +188,15 @@ python -m streamlit run web_ui.py
   - **ON**: Uses structured reasoning with tools, self-reflection, and complex analysis
   - **OFF**: Uses a simpler conversational approach for faster responses
 
-<div align="center">
-  <img src="./screenshots/reasoning_toggle.png" alt="Reasoning Toggle" width="400"/>
-  <p><em>Reasoning toggle in the sidebar</em></p>
-</div>
-
 ### Model Selection
 
 - **General RAG (llama3:8b-64k)**: Better for general questions and analysis
 - **IOC Extraction (qwen2.5:7b-64k)**: Specialized for extracting and analyzing Indicators of Compromise
 
-<div align="center">
-  <img src="./screenshots/model_selection.png" alt="Model Selection" width="400"/>
-  <p><em>Model selection options in the sidebar</em></p>
-</div>
-
 ### Domain Role Selection
 
 - **CTI Analyst**: Standard cyber threat intelligence analysis
 - **Senior Security Analyst**: Advanced analysis with expertise in Sysmon, eBPF, Azure Entra ID, etc.
-
-<div align="center">
-  <img src="./screenshots/domain_roles.png" alt="Domain Roles" width="400"/>
-  <p><em>Domain role selection in the sidebar</em></p>
-</div>
 
 ### Website Processing
 
@@ -250,11 +207,6 @@ Process any website to make its content available for questioning:
 3. Wait for processing to complete
 4. Ask questions about the website content
 
-<div align="center">
-  <img src="./screenshots/website_processing.png" alt="Website Processing" width="800"/>
-  <p><em>Processing websites for enhanced intelligence</em></p>
-</div>
-
 ### Web Search
 
 Enable web search to augment responses with real-time information from the internet:
@@ -262,11 +214,6 @@ Enable web search to augment responses with real-time information from the inter
 1. Toggle "Enable Web Search" in the sidebar
 2. Ask questions that might benefit from current information
 3. The system will automatically search the web and incorporate relevant results
-
-<div align="center">
-  <img src="./screenshots/web_search.png" alt="Web Search" width="400"/>
-  <p><em>Web search toggle in the sidebar</em></p>
-</div>
 
 ### Database Prioritization
 
@@ -276,10 +223,6 @@ After processing a website or enabling web search, you can adjust how much the s
 - Higher values (2.0-5.0) give more weight to processed website content and web search results
 - Lower values (1.0-2.0) balance between permanent and temporary knowledge
 
-<div align="center">
-  <img src="./screenshots/db_prioritization.png" alt="Database Prioritization" width="400"/>
-  <p><em>Temporary DB Boost slider in the sidebar</em></p>
-</div>
 
 ## 🔄 Website Processing Workflow
 
@@ -291,10 +234,6 @@ When you process a website through the UI:
 4. **Temporary Storage**: Embeddings are stored in a temporary vector database
 5. **Prioritized Retrieval**: When you ask questions, the system prioritizes content from processed websites based on the TEMP_DB_BOOST setting
 
-<div align="center">
-  <img src="./screenshots/website_workflow.png" alt="Website Processing Workflow" width="800"/>
-  <p><em>Website processing workflow diagram</em></p>
-</div>
 
 ## 🛠️ Troubleshooting
 
@@ -308,23 +247,14 @@ chmod +x restart_ollama.sh
 ./restart_ollama.sh
 ```
 
-<div align="center">
-  <img src="./screenshots/restart_ollama.png" alt="Restart Ollama" width="700"/>
-  <p><em>Restarting the Ollama service</em></p>
-</div>
-
 ### Memory Usage
 
 If you experience high memory usage:
 
 1. Close other memory-intensive applications
 2. Reduce the number of processed websites in a single session
-3. Use the IOC Extraction model which requires less memory
+3. Use the IOC Extraction model, which requires less memory
 
-<div align="center">
-  <img src="./screenshots/memory_usage.png" alt="Memory Usage" width="700"/>
-  <p><em>Monitoring memory usage during operation</em></p>
-</div>
 
 ## 🤝 Contributing
 
@@ -333,10 +263,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-<div align="center">
-  <img src="./screenshots/oracle_footer.png" alt="Oracle Footer" width="200"/>
-  <p>Developed by Dexterlabs | Author: Dhruv Majumdar</p>
-</div>
